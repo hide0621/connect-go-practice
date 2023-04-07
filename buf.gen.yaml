@@ -1,0 +1,14 @@
+version: v1
+
+managed: # managed mode を使用
+  enabled: true
+  go_package_prefix:
+    default: connect-go-practice/gen/
+
+plugins:
+  - name: go
+    out: gen
+    opt: paths=source_relative
+  - name: connect-go
+    out: gen
+    opt: paths=source_relative

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package file.v1;
+
+// option go_package = "connect-go-practice/gen/file/v1;filev1";
+
+message ListFilesRequest {}; //引数にフィールドは不要なので空のメッセージを作成
+
+message ListFilesResponse {
+    repeated string filenames = 1; //ファイル名のリストを作成するフィールド
+};
+
+service FileService {
+    rpc ListFiles(ListFilesRequest) returns (ListFilesResponse);
+}
