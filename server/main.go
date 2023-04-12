@@ -53,6 +53,8 @@ func main() {
 
 	mux.Handle(path, handler)
 
+	fmt.Println("サーバー起動中。。。")
+
 	http.ListenAndServe("localhost:8080", h2c.NewHandler(mux, &http2.Server{}))
 
 }
